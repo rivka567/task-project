@@ -1,0 +1,41 @@
+
+h5{
+  margin-right: 10px;
+  font-size: 1.06rem;
+}
+
+
+header {
+  text-align: center;
+}
+
+main{
+  margin: 0 30%;
+}
+
+main div .btn{
+margin-bottom: 30px;
+}
+
+main div .submit-btn{
+  margin:20px auto;
+}
+
+form{
+  border: 0.5px solid rgb(208, 208, 229);
+  border-radius: 3px;
+ 
+}
+
+form div{
+margin-left:10% ;
+}
+
+.flex-content{
+ display: flex;
+}
+
+
+
+
+

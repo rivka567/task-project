@@ -1,0 +1,53 @@
+
+<header>
+  <h1>Tasks List</h1>
+</header>
+
+<main>
+  
+<div>
+  <button pButton type="button" label="Create Task" routerLink="/create-task" ></button>
+</div>
+
+<div class="tbl-content">
+<p-table [value]="tasksList" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Id</th>
+          <th (click)="sortBy('name')" class="th-clk">Name</th>
+          <th (click)="sortBy('type')" class="th-clk">TaskType</th>
+          <th >RepeatTask</th>
+          <th (click)="sortBy('time')" class="th-clk">TaskTime</th>
+          <th (click)="sortBy('date')" class="th-clk">DateCompleted</th>
+          <th >TaskCompleted</th>
+          <th >DescribeTask</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-task>
+      <tr>
+          <td>{{task.id}}</td>
+          <td>{{task.taskName}}</td>
+          <td>{{task.taskType}}</td>
+          <td>{{task.repeatTask}}</td>
+          <td>{{task.taskTime}}</td>
+          <td>{{task.dateCompleted | date:'dd-MM-yyyy'}} </td>
+          <td> <input type="checkbox" [(ngModel)]="task.taskCompleted" [checked]=" task.taskCompleted" >
+          </td>
+          <td>{{task.describeTask}}</td>
+          <td>
+            <button pButton type="button" label="Delete Task" class="p-button-text btn" (click)="deleteTask(task.id,0)"></button>
+          </td>
+          <td>
+            <button pButton type="button" label="update" class="p-button-text btn" (click)="update(task.id,task.taskCompleted)"></button>
+          </td>
+      </tr>
+  </ng-template>
+</p-table>
+</div>
+<p-paginator [rows]="itemsPerPage" [totalRecords]="pagination.totalItems"  (onPageChange)="getAllTasks($event.page)"></p-paginator>
+</main>
+
+
+

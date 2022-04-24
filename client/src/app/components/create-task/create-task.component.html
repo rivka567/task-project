@@ -1,0 +1,67 @@
+
+<header id="head">
+
+  <h1>Create Task</h1>
+  
+</header>
+
+<main>
+
+  <div>
+    <button class="btn" pButton label="tasks list" routerLink="/tasks-list" ></button>
+  </div>
+
+<form [formGroup]="form" (ngSubmit)="create()">
+
+  <div class="p-field p-col-12 p-md-4">
+    <h5 for="taskName">taskName</h5>
+    <input type="text" pInputText formControlName="taskName"  class="p-invalid" />
+
+  </div>
+
+
+  <div class="p-field p-col-12 p-md-4">
+    <h5 for="taskType">taskType</h5>
+    <p-dropdown [options]="types" optionLabel="type" placeholder="Select a type" 
+	 formControlName="taskType"  ></p-dropdown>
+
+  </div>
+
+  <div class="p-field p-col-12 p-md-4">
+    <h5 for="dateCompleted">dateCompleted</h5>
+    <p-calendar  [minDate]="minDate" dateFormat="dd/mm/yy" [showIcon]="true" inputId="icon"  
+    formControlName="dateCompleted" class="p-invalid" ></p-calendar>
+  </div>
+
+ 
+  <!-- <div class="p-field p-col-12 p-md-4">
+    <h5 for="taskTime" >taskTime</h5>
+    <input type="time"  formControlName="taskTime" >
+  </div> -->
+
+ <div class="p-field p-col-12 p-md-4">
+    <h5 for="taskTime">taskTime</h5>
+    <p-calendar [timeOnly]="true" inputId="taskTime" formControlName="taskTime">
+  </p-calendar>
+</div>
+
+
+  <div class="p-field-checkbox flex-content" >
+    <h5 for="repeatTask">repeatTask </h5>
+    <p-checkbox  formControlName="repeatTask"  binary="true" inputId="repeatTask"></p-checkbox>
+  </div>
+
+  <div class="p-field p-col-12 p-md-4">
+    <h5 for="describeTask" >describeTask</h5>
+    <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"  formControlName="describeTask"
+    class="p-invalid"></textarea>
+  </div>
+
+
+  <div class="p-field p-col-12 p-md-4">
+   <button pButton type="submit" label="Create Task" class="submit-btn" [disabled]="!form.valid"></button>
+  </div>
+
+</form>
+</main>
+

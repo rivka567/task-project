@@ -1,0 +1,24 @@
+div{
+  padding-bottom: 30px;
+}
+
+header{
+  text-align: center;
+}
+
+.tbl-content .btn{
+  border: 0.5px solid rgb(229 229 239);
+}
+
+main{
+  margin: auto 100px;
+}
+
+main .tbl-content{
+  border: 0.5px solid rgb(229 229 239);
+  border-radius: 5px;
+}
+
+.tbl-content .th-clk{
+  cursor: pointer;
+}
